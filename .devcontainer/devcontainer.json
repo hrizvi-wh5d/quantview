@@ -1,0 +1,45 @@
+{
+  "name": "QuantView Fintech Stock Analysis",
+  "image": "mcr.microsoft.com/devcontainers/java:17",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    },
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "17",
+      "installMaven": true,
+      "mavenVersion": "3.9.6"
+    }
+  },
+  "forwardPorts": [8080, 3000],
+  "portsAttributes": {
+    "8080": {
+      "label": "Spring Boot API",
+      "onAutoForward": "notify",
+      "visibility": "public"
+    },
+    "3000": {
+      "label": "React Frontend",
+      "onAutoForward": "openBrowser",
+      "visibility": "public"
+    }
+  },
+  "postCreateCommand": "cd backend && mvn dependency:resolve -q && cd ../frontend && npm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vmware.vscode-spring-boot",
+        "esbenp.prettier-vscode",
+        "dsznajder.es7-react-js-snippets"
+      ],
+      "settings": {
+        "java.configuration.runtimes": [
+          { "name": "JavaSE-17", "default": true }
+        ],
+        "editor.formatOnSave": true,
+        "editor.tabSize": 2
+      }
+    }
+  }
+}

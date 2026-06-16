@@ -1,0 +1,36 @@
+# ── JAVA / MAVEN ──────────────────────────────────────────────────────────────
+target/
+*.class
+*.jar
+*.war
+*.ear
+.mvn/
+!.mvn/wrapper/maven-wrapper.jar
+
+# ── NODE / REACT ───────────────────────────────────────────────────────────────
+node_modules/
+frontend/build/
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ── IDE ────────────────────────────────────────────────────────────────────────
+.idea/
+*.iml
+.vscode/settings.json
+.classpath
+.project
+.settings/
+
+# ── OS ─────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── SECRETS (NEVER COMMIT) ─────────────────────────────────────────────────────
+*.env
+.env
+application-prod.properties
